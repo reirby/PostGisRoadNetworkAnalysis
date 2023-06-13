@@ -4,9 +4,9 @@ One is calcucation of Betwenness Centrality (BC). Betweenness Centrality comes f
 For the sake of reducing processing time, we use of a modified version of BC, reduced to
 $$g(v)=  \sum_{s \ne v \ne t} σ_{st} (v) $$
 where $σ_{st}$ is the total number of shortest paths from node $s$ to node $t$ and $σ_{st} (v)$ is the number of shortest paths from $s$ to $t$ going through $v$. The resulting weighted road network can be visualized in QGIS using the calculated betweenness centrality metric as a base for a custom visualization style. Since the weights of the road segments vary from 0 and for the roads on the periphery to the hundreds of thousands for the highly used segments, a logarithmic scale is recommended to display the values of BC on the map.
-![](betweennessCentrality/img/5.jpeg)
-FLowchart of the data processing
-![](betweennessCentrality/img/diagram.png)
+![](/betweennessCentrality/img/5.jpeg)
+Flowchart of the data processing:
+![](/betweennessCentrality/img/diagram.png)
 
 
 The second project is an implementation of the "All roads lead to Rome" road network [visualization](http://web.archive.org/web/20201102165714/https://www.move-lab.com/project/roadstorome/).
