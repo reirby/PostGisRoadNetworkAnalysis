@@ -1,15 +1,22 @@
 Here are two road network analysis projects based on PostGIS and pgRouting.
 
-One is calcucation of Betwenness Centrality (BC). Betweenness Centrality comes from the domain of social networks analysis but has been used to investigate and compare urban street networks as well (Strano et al. 2013; Wang 2015; Masucci and Molinero 2016; Boeing 2018). The research mentioned above use betweenness centrality to study the resilience of the road network, to compare cities to each other and to develop a classification for identifying similar cities in large collections. BC was used both for comparing and classification of different cities (Wang 2015; Boeing 2018) and for investigating the properties of a single city (Scellato et al. 2006; Murphy, Levinson, and Owen 2015). This network measure is designed to address the question of identifying the importance of segments (or nodes) in large complex networks (Barthelemy 2004).  The segment is considered important if it is included in many of the shortest paths connecting pairs of nodes. In other words, important segments of the road network are the streets that are structurally made to be traversed more often.
+### Betwenness Centrality
+Betweenness Centrality (BC) comes from the domain of social networks analysis but has been used to investigate and compare urban street networks as well (Strano et al. 2013; Wang 2015; Masucci and Molinero 2016; Boeing 2018). The research mentioned above use betweenness centrality to study the resilience of the road network, to compare cities to each other and to develop a classification for identifying similar cities in large collections. BC was used both for comparing and classification of different cities (Wang 2015; Boeing 2018) and for investigating the properties of a single city (Scellato et al. 2006; Murphy, Levinson, and Owen 2015). This network measure is designed to address the question of identifying the importance of segments (or nodes) in large complex networks (Barthelemy 2004).  The segment is considered important if it is included in many of the shortest paths connecting pairs of nodes. In other words, important segments of the road network are the streets that are structurally made to be traversed more often.
 For the sake of reducing processing time, we use of a modified version of BC, reduced to
 $$g(v)=  \sum_{s \ne v \ne t} σ_{st} (v) $$
 where $σ_{st}$ is the total number of shortest paths from node $s$ to node $t$ and $σ_{st} (v)$ is the number of shortest paths from $s$ to $t$ going through $v$. The resulting weighted road network can be visualized in QGIS using the calculated betweenness centrality metric as a base for a custom visualization style. Since the weights of the road segments vary from 0 and for the roads on the periphery to the hundreds of thousands for the highly used segments, a logarithmic scale is recommended to display the values of BC on the map.
-![](/betweennessCentrality/img/5.jpeg)
+![image](/betweennessCentrality/img/5.jpeg)
+
 Flowchart of the data processing:
-![](/betweennessCentrality/img/diagram.png)
 
+![image](/betweennessCentrality/img/diagram.png)
 
+### All roads lead to Rome
 The second project is an implementation of the "All roads lead to Rome" road network [visualization](http://web.archive.org/web/20201102165714/https://www.move-lab.com/project/roadstorome/).
+In Ancient Rome there was a monument, The Golden Milestone. All roads were considered to begin at this monument and all distances in the Roman Empire were measured relative to it. The provided code allows calculation of a road network visualizzation for any specified central point.
+![image](https://github.com/reirby/PostGisRoadNetworkAnalysis/assets/18068801/bcbf5ce6-3555-4cdc-8290-c7cf2414635b)
+
+
 
 
 
